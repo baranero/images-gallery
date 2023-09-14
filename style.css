@@ -1,3 +1,4 @@
+/* Global styles */
 * {
   margin: 0;
   padding: 0;
@@ -5,7 +6,6 @@
 
 .container-fluid {
   max-width: 1000px;
-  text-align: left;
   margin: 0;
   padding: 0 5rem;
 }
@@ -24,29 +24,27 @@
   height: 500px;
 }
 
-.img-wrapper > img {
+.img-wrapper > img,
+.image-carousel-wrapper > img {
   width: 100%;
   object-fit: cover;
   border-radius: 1rem;
 }
 
-.img-wrapper > button,
-.img-wrapper > button:hover {
-    border: none;
-    border-radius: 1rem;
-    padding: 0;
-    margin: 10px;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-}
-
-.img-wrapper > button {
+/* Button styling */
+button {
+  border: none;
+  border-radius: 1rem;
+  padding: 0;
+  margin: 10px;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
   background-color: rgba(0, 0, 0, 0);
 }
 
-.img-wrapper > button:hover {
+button:hover {
   background-color: rgba(0, 0, 0, 0.658);
 }
 
@@ -69,31 +67,54 @@
   width: 50vw;
 }
 
-/* Custom CSS */
-
-.carousel {
+.image-slider {
   max-width: 1000px !important;
 }
 
-/* Custom CSS */
-.carousel-inner {
+.image-event {
+  max-width: 80vw;
+}
+
+.image-slider>.carousel-inner,
+.image-carousel-event-inner {
   display: flex;
   flex-wrap: nowrap;
-  overflow: hidden; /* Hide overflow to keep images in line */
+  overflow: hidden;
   padding: 0;
 }
 
-.carousel-item {
+.image-carousel-event-inner>.carousel-item {
   display: flex;
   margin-right: 0;
-  flex: 0 0 calc(100%/3) !important;
+  flex: 0 0 calc(100% / 10) !important;
+  padding: 0 5px;
+}
+
+.image-carousel-event-inner>.active {
+  transition: all ease 0.2s;
+opacity: 0.5;
+}
+
+.image-carousel-event-inner>.carousel-item>.image-carousel-wrapper > img {
+  flex: 1;
+  object-fit: cover;
+  max-height: 160px;
+  min-width: 100%;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+
+.image-slider>.carousel-inner>.carousel-item {
+  display: flex;
+  margin-right: 0;
+  flex: 0 0 calc(100% / 3) !important;
   padding: 10px;
 }
 
 .image-carousel-wrapper {
   max-width: 100%;
   height: 300px;
-
 }
 
 .image-carousel-wrapper > img {
@@ -104,7 +125,7 @@
   border-radius: 1rem;
 }
 
-.active {
+.image-slider>.carousel-inner>.carousel-item.active {
   transform: scale(1.2);
   z-index: 2;
 }
@@ -133,7 +154,14 @@
 
 .carousel-control-prev:hover,
 .carousel-control-next:hover {
-  background:rgb(255, 230, 0);
+  background: rgb(255, 230, 0);
   transition: all ease-in 0.2s;
+}
+
+.active-image-container img {
+  width: 80vw;
+  height: 700px;
+  object-fit: cover;
+  border: 5px rgb(0, 132, 255) solid;
 }
 
