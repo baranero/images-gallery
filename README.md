@@ -27,9 +27,12 @@ To run the application on your local machine, follow these steps:
       ```bash
    cd image-gallery
 
-3. Open the project in your favorite code editor.
-4. Open the index.html file in your web browser:
-    - You can double-click the index.html file or right-click it and choose "Open with" your preferred browser.
+3. Make sure you have the Live Server extension installed in your code editor.
+   
+4. Click "Go Live"
+
+   ![golive](https://github.com/baranero/images-gallery/assets/94863094/1ed1c1cd-f86a-40a8-a5ef-dc21bda44566)
+
 
 ## See live
 
