@@ -178,11 +178,30 @@ opacity: 0.5;
 .image-event-next-btn {
   position: absolute;
   right: 1rem;
-  background-color: rgb(255, 230, 0);;
+  background-color: rgb(255, 230, 0);
 }
 
 .image-event-prev-btn {
   position: absolute;
   left: 1rem;
-  background-color: rgb(255, 230, 0);;
+  background-color: rgb(255, 230, 0);
+}
+
+.active-image-description-container {
+  position: absolute;
+  right: 5px;
+  left: 5px;
+  bottom: 5px;
+  width: calc(100% - 10px);
+  height: 80px;
+  background-color: #444444bb;
+  display: flex;
+  align-items: center;
+  border-top: 2px rgb(255, 208, 0) solid  ;
+}
+
+.event-image-title {
+  color: #fff;
+  margin: auto 3rem;
+  font-size: 1.25rem;
 }
