@@ -14,19 +14,21 @@
     />
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css"/>
   </head>
   <body>
+    <!-- Header with Title -->
     <h3>Galeria zdjęć</h3>
-    <div class="container-fluid image-gallery">
-      <!-- First Row of Images -->
-      <div class="row image-gallery-first-row">
-        <!-- Image placeholders will be added here dynamically -->
-      </div>
 
-      <!-- Second Row of Images -->
+    <!-- Container for the First Row of Images -->
+    <div class="container-fluid image-gallery mb-5">
+      <!-- First Row of Images will -->
+      <div class="row image-gallery-first-row">
+        <!-- Image placeholders will -->
+      </div>
+      <!-- Second Row of Images will -->
       <div class="row image-gallery-second-row">
-        <!-- Image placeholders will be added here dynamically -->
+        <!-- Image placeholders will -->
       </div>
     </div>
 
@@ -44,22 +46,28 @@
             <!-- Button to Close Modal -->
           </div>
           <div class="modal-body">
-            <!-- Full-Size Image Displayed Here -->
+            <!-- Full-Size Image -->
             <img src="" class="img-fluid modal-image" />
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Header for Image Carousel Slider -->
     <h3>Galeria zdjęć slider</h3>
+
+    <!-- Container for Image Carousel Slider -->
     <div
       id="imageCarousel"
-      class="carousel container-fluid image-slider"
+      class="carousel container-fluid image-slider mb-5"
       data-bs-interval="false"
     >
+      <!-- Dynamic content for Image Carousel Slider -->
       <div class="carousel-inner row image-slider-row"></div>
 
+      <!-- Navigation buttons for Image Carousel Slider -->
       <div class="nav-button">
+        <!-- Button to navigate to the previous slide -->
         <a
           class="carousel-control-prev"
           href="#imageCarousel"
@@ -68,6 +76,7 @@
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </a>
+        <!-- Button to navigate to the next slide -->
         <a
           class="carousel-control-next"
           href="#imageCarousel"
@@ -79,20 +88,27 @@
       </div>
     </div>
 
+    <!-- Header for Image Carousel Event -->
     <h3>Galeria zdjęć wydarzenie</h3>
+
+    <!-- Container for Image Carousel Event -->
     <div
       id="imageCarouselEvent"
-      class="carousel image-event"
+      class="carousel image-event mb-5"
       data-bs-interval="false"
     >
-    <div class="active-image-container position-relative">
-      <div class="active-image-description-container"></div>
-    </div>
-      <div class="carousel-inner image-event-carousel-inner">
-
+      <!-- Container for the active image with description -->
+      <div class="active-image-container position-relative">
+        <!-- Description of the active image -->
+        <div class="active-image-description-container"></div>
       </div>
 
+      <!-- Dynamic content for Image Carousel Event -->
+      <div class="carousel-inner image-event-carousel-inner"></div>
+
+      <!-- Navigation buttons for Image Carousel Event -->
       <div class="nav-button image-event-nav">
+        <!-- Button to navigate to the previous slide -->
         <a
           class="carousel-control-prev image-event-prev-btn"
           href="#imageCarouselEvent"
@@ -101,6 +117,7 @@
         >
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         </a>
+        <!-- Button to navigate to the next slide -->
         <a
           class="carousel-control-next image-event-next-btn"
           href="#imageCarouselEvent"
@@ -113,7 +130,9 @@
     </div>
 
     <!-- Custom JavaScript -->
-    <script type="module" src="script.js"></script>
+    <script type="module" src="/js/event.js"></script>
+    <script type="module" src="/js/gallery.js"></script>
+    <script type="module" src="/js/slider.js"></script>
 
     <!-- Bootstrap JavaScript -->
     <script

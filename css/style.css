@@ -10,30 +10,47 @@ h3 {
 }
 
 .image-gallery,
-.image-slider{
-  max-width: 1000px;
+.image-slider {
+  width: 100%;
+  max-width: 70vw;
   margin: 0;
   padding: 0 5rem;
 }
 
-.image-gallery-first-row img {
+.image-event {
+  max-width: 80vw;
+  margin: 0 5rem;
+  position: relative;
+}
+
+/* style for first image gallery */
+
+.image-slider {
+  padding: 0 3rem 0 5rem;
+}
+
+.image-gallery-first-row img,
+.image-gallery-second-row img,
+.img-wrapper img,
+.image-carousel-wrapper img {
   width: 100%;
+}
+
+.image-gallery-first-row img {
   height: 300px;
 }
 
 .image-gallery-second-row img {
-  width: 100%;
   height: 500px;
 }
 
-.img-wrapper > img,
-.image-carousel-wrapper > img {
-  width: 100%;
+.img-wrapper img,
+.image-carousel-wrapper img {
   object-fit: cover;
   border-radius: 1rem;
 }
 
-/* Button styling */
+/* first gallery button styling */
 button {
   border: none;
   border-radius: 1rem;
@@ -69,17 +86,7 @@ button:hover {
   width: 50vw;
 }
 
-.image-slider {
-  max-width: 1000px !important;
-}
-
-.image-event {
-  max-width: 80vw;
-  margin: 0 5rem;
-  position: relative;
-}
-
-.image-slider>.carousel-inner,
+.image-slider > .carousel-inner,
 .image-event-carousel-inner {
   display: flex;
   flex-wrap: nowrap;
@@ -87,29 +94,10 @@ button:hover {
   padding: 0;
 }
 
-.image-event-carousel-inner>.carousel-item {
-  display: flex;
-  margin-right: 0;
-  flex: 0 0 calc(100% / 10) !important;
-  padding: 0 5px;
-}
-
-.image-event-carousel-inner>.active {
-  transition: all ease 0.2s;
-opacity: 0.5;
-}
-
-.image-event-carousel-inner>.carousel-item>.image-carousel-wrapper > img {
-  flex: 1;
-  object-fit: cover;
-  max-height: 160px;
-  min-width: 100%;
-  border-radius: 0px;
-  cursor: pointer;
-}
+/* second slider gallery styling */
 
 
-.image-slider>.carousel-inner>.carousel-item {
+.image-slider > .carousel-inner > .carousel-item {
   display: flex;
   margin-right: 0;
   flex: 0 0 calc(100% / 3) !important;
@@ -129,7 +117,7 @@ opacity: 0.5;
   border-radius: 1rem;
 }
 
-.image-slider>.carousel-inner>.carousel-item.active {
+.image-slider > .carousel-inner > .carousel-item.active {
   transform: scale(1.2);
   z-index: 2;
 }
@@ -162,6 +150,8 @@ opacity: 0.5;
   transition: all ease-in 0.2s;
 }
 
+/* third event gallery styling */
+
 .active-image-container img {
   width: 80vw;
   height: 700px;
@@ -169,26 +159,50 @@ opacity: 0.5;
   border: 5px rgb(0, 132, 255) solid;
 }
 
+.image-event-carousel-inner > .carousel-item {
+  display: flex;
+  margin-right: 0;
+  flex: 0 0 calc(100% / 10) !important;
+  padding: 0 5px;
+}
+
+.image-event-carousel-inner > .active {
+  transition: all ease 0.2s;
+  opacity: 0.5;
+}
+
+.image-event-carousel-inner > .carousel-item > .image-carousel-wrapper > img {
+  flex: 1;
+  object-fit: cover;
+  max-height: 100px;
+  min-width: 100%;
+  border-radius: 0px;
+  cursor: pointer;
+}
+
+.image-event-nav,
+.image-event-next-btn,
+.image-event-prev-btn,
+.active-image-description-container {
+  position: absolute;
+}
+
 .image-event-nav {
   top: 340px;
-  position: absolute;
   width: 100%;
 }
 
 .image-event-next-btn {
-  position: absolute;
   right: 1rem;
   background-color: rgb(255, 230, 0);
 }
 
 .image-event-prev-btn {
-  position: absolute;
   left: 1rem;
   background-color: rgb(255, 230, 0);
 }
 
 .active-image-description-container {
-  position: absolute;
   right: 5px;
   left: 5px;
   bottom: 5px;
@@ -197,7 +211,7 @@ opacity: 0.5;
   background-color: #444444bb;
   display: flex;
   align-items: center;
-  border-top: 2px rgb(255, 208, 0) solid  ;
+  border-top: 2px rgb(255, 208, 0) solid;
 }
 
 .event-image-title {
