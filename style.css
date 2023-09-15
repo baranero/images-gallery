@@ -4,22 +4,24 @@
   padding: 0;
 }
 
-.container-fluid {
+h3 {
+  margin-bottom: 2rem;
+  margin-left: 5rem;
+}
+
+.image-gallery,
+.image-slider{
   max-width: 1000px;
   margin: 0;
   padding: 0 5rem;
 }
 
-.first-title {
-  margin-bottom: 2rem;
-}
-
-.first-row img {
+.image-gallery-first-row img {
   width: 100%;
   height: 300px;
 }
 
-.second-row img {
+.image-gallery-second-row img {
   width: 100%;
   height: 500px;
 }
@@ -73,29 +75,31 @@ button:hover {
 
 .image-event {
   max-width: 80vw;
+  margin: 0 5rem;
+  position: relative;
 }
 
 .image-slider>.carousel-inner,
-.image-carousel-event-inner {
+.image-event-carousel-inner {
   display: flex;
   flex-wrap: nowrap;
   overflow: hidden;
   padding: 0;
 }
 
-.image-carousel-event-inner>.carousel-item {
+.image-event-carousel-inner>.carousel-item {
   display: flex;
   margin-right: 0;
   flex: 0 0 calc(100% / 10) !important;
   padding: 0 5px;
 }
 
-.image-carousel-event-inner>.active {
+.image-event-carousel-inner>.active {
   transition: all ease 0.2s;
 opacity: 0.5;
 }
 
-.image-carousel-event-inner>.carousel-item>.image-carousel-wrapper > img {
+.image-event-carousel-inner>.carousel-item>.image-carousel-wrapper > img {
   flex: 1;
   object-fit: cover;
   max-height: 160px;
@@ -165,3 +169,20 @@ opacity: 0.5;
   border: 5px rgb(0, 132, 255) solid;
 }
 
+.image-event-nav {
+  top: 340px;
+  position: absolute;
+  width: 100%;
+}
+
+.image-event-next-btn {
+  position: absolute;
+  right: 1rem;
+  background-color: rgb(255, 230, 0);;
+}
+
+.image-event-prev-btn {
+  position: absolute;
+  left: 1rem;
+  background-color: rgb(255, 230, 0);;
+}

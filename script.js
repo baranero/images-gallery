@@ -1,7 +1,7 @@
 import { imagesArray } from "./data.js";
 
-const firstRow = document.querySelector(".first-row");
-const secondRow = document.querySelector(".second-row");
+const firstRow = document.querySelector(".image-gallery-first-row");
+const secondRow = document.querySelector(".image-gallery-second-row");
 const modalImage = document.querySelector(".modal img");
 const myCarousel = document.getElementById("imageCarousel");
 const carouselInner = document.querySelector(".carousel-inner");
@@ -10,7 +10,7 @@ const carouselControlPrev = document.querySelector(".carousel-control-prev");
 let scrollPosition = 0;
 const carouselEvent = document.getElementById("imageCarouselEvent");
 const carouselEventInner = document.querySelector(
-  ".image-carousel-event-inner"
+  ".image-event-carousel-inner"
 );
 
 // Loop through the imagesArray and create img elements for each image
@@ -184,9 +184,9 @@ for (let i = 0; i < imagesArray.length; i++) {
   const carouselItem = document.createElement("div");
 
   if (image.id === 1) {
-    carouselItem.classList.add("carousel-item", "active");
+    carouselItem.classList.add("carousel-item", "active", 'event-item');
   } else {
-    carouselItem.classList.add("carousel-item");
+    carouselItem.classList.add("carousel-item", 'event-item');
   }
 
   const imgWrapper = document.createElement("div");
@@ -233,3 +233,40 @@ activeImageContainer.appendChild(activeImage);
 
 // Insert the active image container before the carousel
 carouselEvent.insertBefore(activeImageContainer, carouselEvent.firstChild);
+
+const nextButton = document.querySelector(".image-event-next-btn");
+const prevButton = document.querySelector(".image-event-prev-btn");
+
+function updateActiveImage() {
+  // Find the active image within the carousel
+  const activeImage = carouselEventInner.querySelector(".carousel-item.active img").cloneNode(true);
+  console.log(activeImage);
+
+  // Clear the activeImageContainer and append the new active image
+  activeImageContainer.innerHTML = "";
+  activeImageContainer.appendChild(activeImage);
+}
+
+nextButton.addEventListener("click", () => {
+  const currentActiveItem = carouselEventInner.querySelector(".carousel-item.active");
+  let nextItem = currentActiveItem.nextElementSibling;
+
+  if (!nextItem) {
+
+    nextItem = carouselEventInner.querySelector(".carousel-item:first-child");
+  }
+
+  updateActiveImage();
+});
+
+prevButton.addEventListener("click", () => {
+  const currentActiveItem = carouselEventInner.querySelector(".carousel-item.active");
+  let prevItem = currentActiveItem.previousElementSibling;
+
+  if (!prevItem) {
+
+    prevItem = carouselEventInner.querySelector(".carousel-item:last-child");
+  }
+
+  updateActiveImage();
+});
